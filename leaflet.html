@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Screen Leaflet Map</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" integrity="sha256-EFpFyBbuttUJtoocYzsBnERPWee2JYz4cn5nkUBjW0A=" crossorigin="anonymous" />
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.polyline.snakeanim@0.1.1/L.Polyline.SnakeAnim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js" integrity="sha256-rVeyUZMfAHhQJ7hvWaHrKknTDdqGcn1gxBBJA++E4z8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js" integrity="sha256-IqiRR5X1QtAdcq5lG4vBB1/WxwrRCkkjno4pfvWyag0=" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+        .marker-hotel {
+            background-image: url(https://maps.google.com/mapfiles/ms/icons/lodging.png);
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        var map = L.map('map', {
+            zoomControl: false
+        });
+        mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 18,
+            }).addTo(map);
+
+		var hotelIcon = L.AwesomeMarkers.icon({
+            icon: 'bed',
+            prefix: 'fa',
+            markerColor: 'blue',
+            iconColor: 'white'
+        });
+		var destinationIcon = L.AwesomeMarkers.icon({
+            icon: 'map-pin',
+            prefix: 'fa',
+            markerColor: 'red',
+            iconColor: 'white'
+        });
+
+        var hotelLayer = new L.GeoJSON.AJAX("data.geojson", {
+            filter: function (feature) {
+                return feature.properties.type == 'hotel';
+            },
+            pointToLayer: function (feature, latlng) {
+                var marker = L.marker(latlng, {icon: hotelIcon});
+                marker.bindTooltip(feature.properties.name, {permanent: true});
+                return marker;
+            }});
+        hotelLayer.addTo(map);
+        var destinationLayer = new L.GeoJSON.AJAX("data.geojson", {
+            filter: function (feature) {
+                return feature.properties.type == 'destination';
+            },
+            pointToLayer: function (feature, latlng) {
+                var marker = L.marker(latlng, {icon: destinationIcon});
+                marker.bindTooltip(feature.properties.name, {permanent: true});
+                return marker;
+            }});
+        destinationLayer.addTo(map);
+
+        var travelLayer = new L.GeoJSON.AJAX("data.geojson", {
+            filter: function (feature) {
+                return feature.geometry.type === 'LineString';
+            },
+            snakingPause: 1000
+        });
+
+        async function animateOneTrack(layer) {
+            console.log('animating ' + layer);
+            bounds = L.latLngBounds(layer.getBounds().getNorthEast(), layer.getBounds().getSouthWest())
+            map.flyToBounds(bounds);
+            map.once('moveend', async function() {
+                await sleep(1000);
+                layer.addTo(map).snakeIn();
+                layer.once('snakeend', async function() {
+
+                    let coords = layer.getLatLngs()[0];
+                    map.flyTo(coords[coords.length - 1], 14);
+                    map.once('moveend', async function() {
+                        hotelLayer.addTo(map);
+                        await sleep(3000);
+                        map.removeLayer(hotelLayer);
+                        layer.fire('animend');
+                    });
+                });
+            });
+        }
+
+        async function animate() {
+
+            for (let index = 0; index < travelLayer.getLayers().length - 1; ++index) {
+                let layer = travelLayer.getLayers()[index];
+                let next = travelLayer.getLayers()[index + 1];
+
+                let snakeNext = async function() {
+                    animateOneTrack(next);
+                }
+
+                layer.once('animend', snakeNext);
+            }
+
+            animateOneTrack(travelLayer.getLayers()[0]);
+        }
+        travelLayer.on('data:loaded', function(e) {
+            bounds = [travelLayer.getBounds().getNorthEast(), travelLayer.getBounds().getSouthWest()]
+            map.fitBounds(bounds);
+            animate();
+        });
+        // travelLayer.addTo(map);
+
+        // travelLayer.on('snakestart snake snakeend', function(ev){
+		// 	console.log(ev.type);
+		// });
+
+
+    </script>
+</body>
+</html>
