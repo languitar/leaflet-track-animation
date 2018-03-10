@@ -22,9 +22,6 @@
             height: 100%;
             width: 100%;
         }
-        .marker-hotel {
-            background-image: url(https://maps.google.com/mapfiles/ms/icons/lodging.png);
-        }
     </style>
 </head>
 <body>
@@ -35,20 +32,45 @@
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
-        var map = L.map('map', {
-            zoomControl: false
-        });
         mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-        L.tileLayer(
+        var tileLayer = L.tileLayer(
             'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; ' + mapLink + ' Contributors',
             maxZoom: 18,
-            }).addTo(map);
+            });
+        var map = L.map('map', {
+            zoomControl: false,
+            layers: [tileLayer]
+        });
 
 		var hotelIcon = L.AwesomeMarkers.icon({
             icon: 'bed',
             prefix: 'fa',
             markerColor: 'blue',
+            iconColor: 'white'
+        });
+		var foodIcon = L.AwesomeMarkers.icon({
+            icon: 'utensils',
+            prefix: 'fa',
+            markerColor: '#ffff00', // TODO
+            iconColor: 'white'
+        });
+		var shopIcon = L.AwesomeMarkers.icon({
+            icon: 'shopping-cart',
+            prefix: 'fa',
+            markerColor: '#ffff00', // TODO
+            iconColor: 'white'
+        });
+		var hikeIcon = L.AwesomeMarkers.icon({
+            icon: 'male',
+            prefix: 'fa',
+            markerColor: '#ffff00', // TODO
+            iconColor: 'white'
+        });
+		var photoIcon = L.AwesomeMarkers.icon({
+            icon: 'camera',
+            prefix: 'fa',
+            markerColor: '#ffff00', // TODO
             iconColor: 'white'
         });
 		var destinationIcon = L.AwesomeMarkers.icon({
@@ -58,33 +80,80 @@
             iconColor: 'white'
         });
 
-        var hotelLayer = new L.GeoJSON.AJAX("data.geojson", {
-            filter: function (feature) {
-                return feature.properties.type == 'hotel';
-            },
-            pointToLayer: function (feature, latlng) {
-                var marker = L.marker(latlng, {icon: hotelIcon});
-                marker.bindTooltip(feature.properties.name, {permanent: true});
-                return marker;
-            }});
-        hotelLayer.addTo(map);
-        var destinationLayer = new L.GeoJSON.AJAX("data.geojson", {
-            filter: function (feature) {
-                return feature.properties.type == 'destination';
-            },
-            pointToLayer: function (feature, latlng) {
-                var marker = L.marker(latlng, {icon: destinationIcon});
-                marker.bindTooltip(feature.properties.name, {permanent: true});
-                return marker;
-            }});
-        destinationLayer.addTo(map);
+        // var hotelLayer = new L.GeoJSON.AJAX("data.geojson", {
+        //     filter: function (feature) {
+        //         return feature.properties.type == 'hotel';
+        //     },
+        //     pointToLayer: function (feature, latlng) {
+        //         var marker = L.marker(latlng, {icon: hotelIcon});
+        //         marker.bindTooltip(feature.properties.name, {permanent: true});
+        //         return marker;
+        //     }});
+        // hotelLayer.addTo(map);
+        // var destinationLayer = new L.GeoJSON.AJAX("data.geojson", {
+        //     filter: function (feature) {
+        //         return feature.properties.type == 'destination';
+        //     },
+        //     pointToLayer: function (feature, latlng) {
+        //         var marker = L.marker(latlng, {icon: destinationIcon});
+        //         marker.bindTooltip(feature.properties.name, {permanent: true});
+        //         return marker;
+        //     }});
+        // destinationLayer.addTo(map);
+        //
+        // var travelLayer = new L.GeoJSON.AJAX("data.geojson", {
+        //     filter: function (feature) {
+        //         return feature.geometry.type === 'LineString';
+        //     },
+        //     snakingPause: 1000
+        // });
 
-        var travelLayer = new L.GeoJSON.AJAX("data.geojson", {
-            filter: function (feature) {
-                return feature.geometry.type === 'LineString';
+        destinations = {}
+        details = {}
+        routes = {}
+
+        allLayer = new L.GeoJSON.AJAX("data.geojson", {
+            pointToLayer: function(feature, latlng) {
+                if (feature.properties.type === 'destination') {
+                    var marker = L.marker(latlng, {icon: destinationIcon});
+                    marker.bindTooltip(feature.properties.name, {permanent: true});
+                    return marker;
+                } else if (feature.properties.type === 'detail') {
+                    var marker = L.marker(latlng);
+
+                    if (feature.properties.kind === 'hotel') {
+                        marker = L.marker(latlng, {icon: hotelIcon});
+                    } else if (feature.properties.kind === 'food') {
+                        marker = L.marker(latlng, {icon: foodIcon});
+                    } else if (feature.properties.kind === 'shop') {
+                        marker = L.marker(latlng, {icon: shopIcon});
+                    } else if (feature.properties.kind === 'hike') {
+                        marker = L.marker(latlng, {icon: hikeIcon});
+                    } else if (feature.properties.kind === 'photo') {
+                        marker = L.marker(latlng, {icon: hikeIcon});
+                    }
+
+                    marker.bindTooltip(feature.properties.name, {permanent: true});
+
+                    return marker;
+                } else {
+                    return L.marker(latlng);
+                }
             },
-            snakingPause: 1000
+            onEachFeature: function(feature, layer) {
+                if (feature.properties.type === 'destination') {
+                    destinations[feature.properties.key] = layer;
+                } else if (feature.properties.type === 'detail') {
+                    if (!(feature.properties.destination in details)) {
+                        details[feature.properties.destination] = L.layerGroup();
+                    }
+                    layer.addTo(details[feature.properties.destination]);
+                } else if (feature.properties.type === 'route') {
+                    routes[feature.properties.from] = layer;
+                }
+            }
         });
+        allLayer.addTo(map);
 
         async function animateOneTrack(layer) {
             console.log('animating ' + layer);
@@ -122,8 +191,8 @@
 
             animateOneTrack(travelLayer.getLayers()[0]);
         }
-        travelLayer.on('data:loaded', function(e) {
-            bounds = [travelLayer.getBounds().getNorthEast(), travelLayer.getBounds().getSouthWest()]
+        allLayer.on('data:loaded', function(e) {
+            bounds = [allLayer.getBounds().getNorthEast(), allLayer.getBounds().getSouthWest()]
             map.fitBounds(bounds);
 
             document.onkeydown = function (e) {
