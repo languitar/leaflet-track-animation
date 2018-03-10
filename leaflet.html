@@ -125,7 +125,15 @@
         travelLayer.on('data:loaded', function(e) {
             bounds = [travelLayer.getBounds().getNorthEast(), travelLayer.getBounds().getSouthWest()]
             map.fitBounds(bounds);
-            animate();
+
+            document.onkeydown = function (e) {
+                e = e || window.event;
+                switch (e.which || e.keyCode) {
+                    case 13 : //Your Code Here (13 is ascii code for 'ENTER')
+                        animate();
+                        break;
+                }
+            }
         });
         // travelLayer.addTo(map);
 
