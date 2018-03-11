@@ -18,14 +18,30 @@
         },
         {
             "geometry": {
-                "coordinates": [-111.41086667,
-                    36.90248333
+                "coordinates": [-111.48425,
+                    36.93715
                 ],
                 "type": "Point"
             },
             "properties": {
-                "description": "Antelope Canyon",
-                "name": "Antelope Canyon",
+                "description": "Glen Canyon Dam",
+                "name": "Glen Canyon Dam",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "page"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-111.47831667,
+                    36.92438333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Glen Canyon Dam Overlook",
+                "name": "Glen Canyon Dam Overlook",
                 "type": "detail",
                 "kind": "poi",
                 "destination": "page"
@@ -60,70 +76,6 @@
                 "name": "El Tapatio",
                 "type": "detail",
                 "kind": "food",
-                "destination": "page"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-111.48425,
-                    36.93715
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Glen Canyon Dam",
-                "name": "Glen Canyon Dam",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "page"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-111.47831667,
-                    36.92438333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Glen Canyon Dam Overlook",
-                "name": "Glen Canyon Dam Overlook",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "page"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-111.4846,
-                    36.90568333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "McDonald's",
-                "name": "McDonald's",
-                "type": "detail",
-                "kind": "food",
-                "destination": "page"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-111.48718333,
-                    36.9049
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Walmart",
-                "name": "Walmart",
-                "type": "detail",
-                "kind": "shop",
                 "destination": "page"
             },
             "type": "Feature"
@@ -3000,6 +2952,54 @@
         },
         {
             "geometry": {
+                "coordinates": [-111.4846,
+                    36.90568333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "McDonald's",
+                "name": "McDonald's",
+                "type": "detail",
+                "kind": "food",
+                "destination": "page"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-111.48718333,
+                    36.9049
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Walmart",
+                "name": "Walmart",
+                "type": "detail",
+                "kind": "shop",
+                "destination": "page"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-111.41086667,
+                    36.90248333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Antelope Canyon",
+                "name": "Antelope Canyon",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "page"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
                 "coordinates": [
                     [-111.50303364,
                         36.87666178,
@@ -5818,54 +5818,6 @@
         },
         {
             "geometry": {
-                "coordinates": [-116.31698333,
-                    34.13468333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Crossroads Cafe",
-                "name": "Crossroads Cafe",
-                "type": "detail",
-                "kind": "food",
-                "destination": "joshuatree"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-116.31445,
-                    34.13463333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Joshua Tree Saloon",
-                "name": "Joshua Tree Saloon",
-                "type": "detail",
-                "kind": "food",
-                "destination": "joshuatree"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-116.31645,
-                    34.13521667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Pie for the People!",
-                "name": "Pie for the People!",
-                "type": "detail",
-                "kind": "food",
-                "destination": "joshuatree"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
                 "coordinates": [-116.05848333,
                     34.13538333
                 ],
@@ -5882,112 +5834,16 @@
         },
         {
             "geometry": {
-                "coordinates": [-116.10508333,
-                    34.10571667
+                "coordinates": [-116.31698333,
+                    34.13468333
                 ],
                 "type": "Point"
             },
             "properties": {
-                "description": "49 Palms Oasis",
-                "name": "49 Palms Oasis",
+                "description": "Crossroads Cafe",
+                "name": "Crossroads Cafe",
                 "type": "detail",
-                "kind": "hike",
-                "destination": "joshuatree"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-116.17121667,
-                    34.01465
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Hidden Valley Hike",
-                "name": "Hidden Valley Hike",
-                "type": "detail",
-                "kind": "hike",
-                "destination": "joshuatree"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-116.13383333,
-                    34.03658333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Wall Street Mill",
-                "name": "Wall Street Mill",
-                "type": "detail",
-                "kind": "hike",
-                "destination": "joshuatree"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-116.13685,
-                    34.03018333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Rusty Car",
-                "name": "Rusty Car",
-                "type": "detail",
-                "kind": "hike",
-                "destination": "joshuatree"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-116.07008333,
-                    33.99406667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Sunset Spot",
-                "name": "Sunset Spot",
-                "type": "detail",
-                "kind": "photo",
-                "destination": "joshuatree"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-116.08021667,
-                    34.00026667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Joshua Tree Night Photo",
-                "name": "Joshua Tree Night Photo",
-                "type": "detail",
-                "kind": "photo",
-                "destination": "joshuatree"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-115.92948333,
-                    33.92475
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Cholla Cactus Garden",
-                "name": "Cholla Cactus Garden",
-                "type": "detail",
-                "kind": "poi",
+                "kind": "food",
                 "destination": "joshuatree"
             },
             "type": "Feature"
@@ -6026,16 +5882,80 @@
         },
         {
             "geometry": {
-                "coordinates": [-116.0972,
-                    34.13413333
+                "coordinates": [-116.17121667,
+                    34.01465
                 ],
                 "type": "Point"
             },
             "properties": {
-                "description": "Stater Bros.",
-                "name": "Stater Bros.",
+                "description": "Hidden Valley Hike",
+                "name": "Hidden Valley Hike",
                 "type": "detail",
-                "kind": "shop",
+                "kind": "hike",
+                "destination": "joshuatree"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-116.13685,
+                    34.03018333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Rusty Car",
+                "name": "Rusty Car",
+                "type": "detail",
+                "kind": "hike",
+                "destination": "joshuatree"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-116.13383333,
+                    34.03658333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Wall Street Mill",
+                "name": "Wall Street Mill",
+                "type": "detail",
+                "kind": "hike",
+                "destination": "joshuatree"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-116.07008333,
+                    33.99406667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Sunset Spot",
+                "name": "Sunset Spot",
+                "type": "detail",
+                "kind": "photo",
+                "destination": "joshuatree"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-116.08021667,
+                    34.00026667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Joshua Tree Night Photo",
+                "name": "Joshua Tree Night Photo",
+                "type": "detail",
+                "kind": "photo",
                 "destination": "joshuatree"
             },
             "type": "Feature"
@@ -14612,6 +14532,70 @@
         },
         {
             "geometry": {
+                "coordinates": [-116.31645,
+                    34.13521667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Pie for the People!",
+                "name": "Pie for the People!",
+                "type": "detail",
+                "kind": "food",
+                "destination": "joshuatree"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-116.31445,
+                    34.13463333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Joshua Tree Saloon",
+                "name": "Joshua Tree Saloon",
+                "type": "detail",
+                "kind": "food",
+                "destination": "joshuatree"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-116.10508333,
+                    34.10571667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "49 Palms Oasis",
+                "name": "49 Palms Oasis",
+                "type": "detail",
+                "kind": "hike",
+                "destination": "joshuatree"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-115.92948333,
+                    33.92475
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Cholla Cactus Garden",
+                "name": "Cholla Cactus Garden",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "joshuatree"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
                 "coordinates": [
                     [-116.31189108,
                         34.13447857,
@@ -20382,70 +20366,6 @@
         },
         {
             "geometry": {
-                "coordinates": [-112.21356667,
-                    37.58738333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Swamp Canyon",
-                "name": "Swamp Canyon",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "bryce"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.24673333,
-                    37.54451667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Farview Point",
-                "name": "Farview Point",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "bryce"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.2603,
-                    37.53176667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Natural Bridge",
-                "name": "Natural Bridge",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "bryce"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.26476667,
-                    37.51646667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Agua Canyon",
-                "name": "Agua Canyon",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "bryce"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
                 "coordinates": [
                     [-112.15513229,
                         37.6791358,
@@ -26008,6 +25928,70 @@
         },
         {
             "geometry": {
+                "coordinates": [-112.21356667,
+                    37.58738333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Swamp Canyon",
+                "name": "Swamp Canyon",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "bryce"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.24673333,
+                    37.54451667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Farview Point",
+                "name": "Farview Point",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "bryce"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.2603,
+                    37.53176667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Natural Bridge",
+                "name": "Natural Bridge",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "bryce"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.26476667,
+                    37.51646667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Agua Canyon",
+                "name": "Agua Canyon",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "bryce"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
                 "coordinates": [
                     [-112.15744972,
                         37.67254829,
@@ -28178,86 +28162,6 @@
         },
         {
             "geometry": {
-                "coordinates": [-112.11728333,
-                    36.06601667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Yavapai Point",
-                "name": "Yavapai Point",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "grandcanyon"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.13666667,
-                    36.05678333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Grand Canyon Station",
-                "name": "Grand Canyon Station",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "grandcanyon"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.14643333,
-                    36.06206667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Trailview Overlook",
-                "name": "Trailview Overlook",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "grandcanyon"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.15496667,
-                    36.07448333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Hopi Point",
-                "name": "Hopi Point",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "grandcanyon"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.16603333,
-                    36.07215
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Mohave Point",
-                "name": "Mohave Point",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "grandcanyon"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
                 "coordinates": [-112.12706667,
                     35.97326667
                 ],
@@ -28268,54 +28172,6 @@
                 "name": "Wendy's",
                 "type": "detail",
                 "kind": "food",
-                "destination": "grandcanyon"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.12706667,
-                    35.97356667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "RP's Stage Stop",
-                "name": "RP's Stage Stop",
-                "type": "detail",
-                "kind": "food",
-                "destination": "grandcanyon"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.09276667,
-                    36.04796667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Pipecreek Vista",
-                "name": "Pipecreek Vista",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "grandcanyon"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.08375,
-                    36.05861667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Yaki Point",
-                "name": "Yaki Point",
-                "type": "detail",
-                "kind": "poi",
                 "destination": "grandcanyon"
             },
             "type": "Feature"
@@ -31354,6 +31210,134 @@
                 "name": "11 track",
                 "type": "detail",
                 "kind": "track",
+                "destination": "grandcanyon"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.12706667,
+                    35.97356667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "RP's Stage Stop",
+                "name": "RP's Stage Stop",
+                "type": "detail",
+                "kind": "food",
+                "destination": "grandcanyon"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.11728333,
+                    36.06601667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Yavapai Point",
+                "name": "Yavapai Point",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "grandcanyon"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.08375,
+                    36.05861667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Yaki Point",
+                "name": "Yaki Point",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "grandcanyon"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.09276667,
+                    36.04796667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Pipecreek Vista",
+                "name": "Pipecreek Vista",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "grandcanyon"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.13666667,
+                    36.05678333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Grand Canyon Station",
+                "name": "Grand Canyon Station",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "grandcanyon"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.14643333,
+                    36.06206667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Trailview Overlook",
+                "name": "Trailview Overlook",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "grandcanyon"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.15496667,
+                    36.07448333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Hopi Point",
+                "name": "Hopi Point",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "grandcanyon"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-112.16603333,
+                    36.07215
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Mohave Point",
+                "name": "Mohave Point",
+                "type": "detail",
+                "kind": "poi",
                 "destination": "grandcanyon"
             },
             "type": "Feature"
@@ -35346,6 +35330,22 @@
         },
         {
             "geometry": {
+                "coordinates": [-115.1703,
+                    36.11735
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Flour & Barley's",
+                "name": "Flour & Barley's",
+                "type": "detail",
+                "kind": "food",
+                "destination": "lasvegas"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
                 "coordinates": [-115.17567784,
                     36.11279322
                 ],
@@ -35410,22 +35410,6 @@
         },
         {
             "geometry": {
-                "coordinates": [-115.1703,
-                    36.11735
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Flour & Barley's",
-                "name": "Flour & Barley's",
-                "type": "detail",
-                "kind": "food",
-                "destination": "lasvegas"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
                 "coordinates": [-116.54293333,
                     33.80063333
                 ],
@@ -35442,22 +35426,6 @@
         },
         {
             "geometry": {
-                "coordinates": [-116.54155,
-                    33.81243333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Townie Bagles",
-                "name": "Townie Bagles",
-                "type": "detail",
-                "kind": "food",
-                "destination": "palmsprings"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
                 "coordinates": [-116.54665,
                     33.82731667
                 ],
@@ -35466,6 +35434,551 @@
             "properties": {
                 "description": "La Bonita's",
                 "name": "La Bonita's",
+                "type": "detail",
+                "kind": "food",
+                "destination": "palmsprings"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [
+                    [
+                        -116.54277563,
+                        33.80124092,
+                        146
+                    ],
+                    [
+                        -116.54316187,
+                        33.80130529,
+                        146
+                    ],
+                    [
+                        -116.54417038,
+                        33.8014555,
+                        145
+                    ],
+                    [
+                        -116.54500723,
+                        33.80192757,
+                        145
+                    ],
+                    [
+                        -116.54526472,
+                        33.80218506,
+                        145
+                    ],
+                    [
+                        -116.54528618,
+                        33.80220652,
+                        145
+                    ],
+                    [
+                        -116.54537201,
+                        33.80233526,
+                        145
+                    ],
+                    [
+                        -116.54556513,
+                        33.80278587,
+                        145
+                    ],
+                    [
+                        -116.5456295,
+                        33.80357981,
+                        145
+                    ],
+                    [
+                        -116.54560804,
+                        33.80568266,
+                        145
+                    ],
+                    [
+                        -116.54560804,
+                        33.80727053,
+                        146
+                    ],
+                    [
+                        -116.54560804,
+                        33.80797863,
+                        146
+                    ],
+                    [
+                        -116.54558659,
+                        33.80834341,
+                        147
+                    ],
+                    [
+                        -116.54554367,
+                        33.80864382,
+                        147
+                    ],
+                    [
+                        -116.54526472,
+                        33.80924463,
+                        147
+                    ],
+                    [
+                        -116.54468536,
+                        33.81016731,
+                        147
+                    ],
+                    [
+                        -116.54455662,
+                        33.81111145,
+                        147
+                    ],
+                    [
+                        -116.54462099,
+                        33.81224871,
+                        147
+                    ],
+                    [
+                        -116.54502869,
+                        33.81319284,
+                        148
+                    ],
+                    [
+                        -116.54550076,
+                        33.81385803,
+                        148
+                    ],
+                    [
+                        -116.5456295,
+                        33.81445885,
+                        149
+                    ],
+                    [
+                        -116.54560804,
+                        33.81458759,
+                        149
+                    ],
+                    [
+                        -116.54558659,
+                        33.81540298,
+                        150
+                    ],
+                    [
+                        -116.54558659,
+                        33.81563902,
+                        151
+                    ],
+                    [
+                        -116.54558659,
+                        33.81566048,
+                        151
+                    ],
+                    [
+                        -116.54556513,
+                        33.81598234,
+                        150
+                    ],
+                    [
+                        -116.54554367,
+                        33.81677628,
+                        149
+                    ],
+                    [
+                        -116.54554367,
+                        33.81827831,
+                        147
+                    ],
+                    [
+                        -116.54554367,
+                        33.82016659,
+                        146
+                    ],
+                    [
+                        -116.54556513,
+                        33.82113218,
+                        147
+                    ],
+                    [
+                        -116.54556513,
+                        33.82164717,
+                        147
+                    ],
+                    [
+                        -116.54556513,
+                        33.8224411,
+                        148
+                    ],
+                    [
+                        -116.54556513,
+                        33.82278442,
+                        148
+                    ],
+                    [
+                        -116.54556513,
+                        33.82282734,
+                        148
+                    ],
+                    [
+                        -116.54554367,
+                        33.822999,
+                        148
+                    ],
+                    [
+                        -116.54554367,
+                        33.82368565,
+                        147
+                    ],
+                    [
+                        -116.54560804,
+                        33.82452249,
+                        148
+                    ],
+                    [
+                        -116.54560804,
+                        33.82561684,
+                        149
+                    ],
+                    [
+                        -116.5456295,
+                        33.8260889,
+                        150
+                    ],
+                    [
+                        -116.5456295,
+                        33.8264966,
+                        151
+                    ],
+                    [
+                        -116.5456295,
+                        33.82653952,
+                        151
+                    ],
+                    [
+                        -116.5456295,
+                        33.82673263,
+                        151
+                    ],
+                    [
+                        -116.5456295,
+                        33.82737637,
+                        151
+                    ],
+                    [
+                        -116.54565096,
+                        33.82840633,
+                        152
+                    ],
+                    [
+                        -116.54569387,
+                        33.82947922,
+                        153
+                    ],
+                    [
+                        -116.54569387,
+                        33.83025169,
+                        154
+                    ],
+                    [
+                        -116.54588699,
+                        33.83038044,
+                        154
+                    ],
+                    [
+                        -116.54608011,
+                        33.83035898,
+                        155
+                    ],
+                    [
+                        -116.54650927,
+                        33.83031607,
+                        156
+                    ],
+                    [
+                        -116.54672384,
+                        33.83029461,
+                        158
+                    ],
+                    [
+                        -116.54685259,
+                        33.83012295,
+                        158
+                    ],
+                    [
+                        -116.54687405,
+                        33.83003712,
+                        158
+                    ],
+                    [
+                        -116.5468955,
+                        33.82932901,
+                        157
+                    ],
+                    [
+                        -116.54687405,
+                        33.82784843,
+                        155
+                    ],
+                    [
+                        -116.54687405,
+                        33.82744074,
+                        155
+                    ],
+                    [
+                        -116.54687405,
+                        33.82741928,
+                        155
+                    ],
+                    [
+                        -116.54687405,
+                        33.8274622,
+                        154
+                    ],
+                    [
+                        -116.54687405,
+                        33.82752657,
+                        153
+                    ],
+                    [
+                        -116.54687405,
+                        33.82731199,
+                        153
+                    ],
+                    [
+                        -116.54687405,
+                        33.8269043,
+                        154
+                    ],
+                    [
+                        -116.54687405,
+                        33.8269043,
+                        154
+                    ],
+                    [
+                        -116.54687405,
+                        33.82677555,
+                        154
+                    ],
+                    [
+                        -116.54687405,
+                        33.82613182,
+                        154
+                    ],
+                    [
+                        -116.54685259,
+                        33.82540226,
+                        154
+                    ],
+                    [
+                        -116.54683113,
+                        33.82518768,
+                        153
+                    ],
+                    [
+                        -116.54683113,
+                        33.82518768,
+                        153
+                    ],
+                    [
+                        -116.54685259,
+                        33.82503748,
+                        153
+                    ],
+                    [
+                        -116.54683113,
+                        33.82452249,
+                        153
+                    ],
+                    [
+                        -116.54678822,
+                        33.82357836,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.82263422,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.82252693,
+                        153
+                    ],
+                    [
+                        -116.54678822,
+                        33.82241964,
+                        152
+                    ],
+                    [
+                        -116.54680967,
+                        33.82224798,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.82166863,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.82136822,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.82078886,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.82010221,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.81975889,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.81915808,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.81789208,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.81681919,
+                        153
+                    ],
+                    [
+                        -116.54680967,
+                        33.816154,
+                        154
+                    ],
+                    [
+                        -116.54668093,
+                        33.81542444,
+                        156
+                    ],
+                    [
+                        -116.54620886,
+                        33.81465197,
+                        157
+                    ],
+                    [
+                        -116.54541493,
+                        33.81366491,
+                        156
+                    ],
+                    [
+                        -116.54481411,
+                        33.81263494,
+                        155
+                    ],
+                    [
+                        -116.54464245,
+                        33.81175518,
+                        154
+                    ],
+                    [
+                        -116.54464245,
+                        33.81063938,
+                        154
+                    ],
+                    [
+                        -116.54498577,
+                        33.80978107,
+                        154
+                    ],
+                    [
+                        -116.54552221,
+                        33.80903006,
+                        154
+                    ],
+                    [
+                        -116.54569387,
+                        33.80834341,
+                        153
+                    ],
+                    [
+                        -116.54569387,
+                        33.80821466,
+                        153
+                    ],
+                    [
+                        -116.54571533,
+                        33.80639076,
+                        150
+                    ],
+                    [
+                        -116.54569387,
+                        33.80433083,
+                        148
+                    ],
+                    [
+                        -116.54567242,
+                        33.80291462,
+                        147
+                    ],
+                    [
+                        -116.54554367,
+                        33.8025713,
+                        146
+                    ],
+                    [
+                        -116.54550076,
+                        33.80248547,
+                        146
+                    ],
+                    [
+                        -116.54539347,
+                        33.80233526,
+                        146
+                    ],
+                    [
+                        -116.5449214,
+                        33.80182028,
+                        147
+                    ],
+                    [
+                        -116.54410601,
+                        33.80139113,
+                        148
+                    ],
+                    [
+                        -116.5432477,
+                        33.80128384,
+                        148
+                    ],
+                    [
+                        -116.54281855,
+                        33.80128384,
+                        147
+                    ],
+                    [
+                        -116.54277563,
+                        33.80128384,
+                        147
+                    ]
+                ],
+                "type": "LineString"
+            },
+            "properties": {
+                "name": "14 track",
+                "type": "detail",
+                "kind": "track",
+                "destination": "palmsprings"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-116.54155,
+                    33.81243333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Townie Bagles",
+                "name": "Townie Bagles",
                 "type": "detail",
                 "kind": "food",
                 "destination": "palmsprings"
@@ -35516,432 +36029,6 @@
                 "name": "City Center / Market",
                 "type": "detail",
                 "kind": "poi",
-                "destination": "palmsprings"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [
-                    [-116.54277563,
-                        33.80124092,
-                        146
-                    ],
-                    [-116.54316187,
-                        33.80130529,
-                        146
-                    ],
-                    [-116.54417038,
-                        33.8014555,
-                        145
-                    ],
-                    [-116.54500723,
-                        33.80192757,
-                        145
-                    ],
-                    [-116.54526472,
-                        33.80218506,
-                        145
-                    ],
-                    [-116.54528618,
-                        33.80220652,
-                        145
-                    ],
-                    [-116.54537201,
-                        33.80233526,
-                        145
-                    ],
-                    [-116.54556513,
-                        33.80278587,
-                        145
-                    ],
-                    [-116.5456295,
-                        33.80357981,
-                        145
-                    ],
-                    [-116.54560804,
-                        33.80568266,
-                        145
-                    ],
-                    [-116.54560804,
-                        33.80727053,
-                        146
-                    ],
-                    [-116.54560804,
-                        33.80797863,
-                        146
-                    ],
-                    [-116.54558659,
-                        33.80834341,
-                        147
-                    ],
-                    [-116.54554367,
-                        33.80864382,
-                        147
-                    ],
-                    [-116.54526472,
-                        33.80924463,
-                        147
-                    ],
-                    [-116.54468536,
-                        33.81016731,
-                        147
-                    ],
-                    [-116.54455662,
-                        33.81111145,
-                        147
-                    ],
-                    [-116.54462099,
-                        33.81224871,
-                        147
-                    ],
-                    [-116.54502869,
-                        33.81319284,
-                        148
-                    ],
-                    [-116.54550076,
-                        33.81385803,
-                        148
-                    ],
-                    [-116.5456295,
-                        33.81445885,
-                        149
-                    ],
-                    [-116.54560804,
-                        33.81458759,
-                        149
-                    ],
-                    [-116.54558659,
-                        33.81540298,
-                        150
-                    ],
-                    [-116.54558659,
-                        33.81563902,
-                        151
-                    ],
-                    [-116.54558659,
-                        33.81566048,
-                        151
-                    ],
-                    [-116.54556513,
-                        33.81598234,
-                        150
-                    ],
-                    [-116.54554367,
-                        33.81677628,
-                        149
-                    ],
-                    [-116.54554367,
-                        33.81827831,
-                        147
-                    ],
-                    [-116.54554367,
-                        33.82016659,
-                        146
-                    ],
-                    [-116.54556513,
-                        33.82113218,
-                        147
-                    ],
-                    [-116.54556513,
-                        33.82164717,
-                        147
-                    ],
-                    [-116.54556513,
-                        33.8224411,
-                        148
-                    ],
-                    [-116.54556513,
-                        33.82278442,
-                        148
-                    ],
-                    [-116.54556513,
-                        33.82282734,
-                        148
-                    ],
-                    [-116.54554367,
-                        33.822999,
-                        148
-                    ],
-                    [-116.54554367,
-                        33.82368565,
-                        147
-                    ],
-                    [-116.54560804,
-                        33.82452249,
-                        148
-                    ],
-                    [-116.54560804,
-                        33.82561684,
-                        149
-                    ],
-                    [-116.5456295,
-                        33.8260889,
-                        150
-                    ],
-                    [-116.5456295,
-                        33.8264966,
-                        151
-                    ],
-                    [-116.5456295,
-                        33.82653952,
-                        151
-                    ],
-                    [-116.5456295,
-                        33.82673263,
-                        151
-                    ],
-                    [-116.5456295,
-                        33.82737637,
-                        151
-                    ],
-                    [-116.54565096,
-                        33.82840633,
-                        152
-                    ],
-                    [-116.54569387,
-                        33.82947922,
-                        153
-                    ],
-                    [-116.54569387,
-                        33.83025169,
-                        154
-                    ],
-                    [-116.54588699,
-                        33.83038044,
-                        154
-                    ],
-                    [-116.54608011,
-                        33.83035898,
-                        155
-                    ],
-                    [-116.54650927,
-                        33.83031607,
-                        156
-                    ],
-                    [-116.54672384,
-                        33.83029461,
-                        158
-                    ],
-                    [-116.54685259,
-                        33.83012295,
-                        158
-                    ],
-                    [-116.54687405,
-                        33.83003712,
-                        158
-                    ],
-                    [-116.5468955,
-                        33.82932901,
-                        157
-                    ],
-                    [-116.54687405,
-                        33.82784843,
-                        155
-                    ],
-                    [-116.54687405,
-                        33.82744074,
-                        155
-                    ],
-                    [-116.54687405,
-                        33.82741928,
-                        155
-                    ],
-                    [-116.54687405,
-                        33.8274622,
-                        154
-                    ],
-                    [-116.54687405,
-                        33.82752657,
-                        153
-                    ],
-                    [-116.54687405,
-                        33.82731199,
-                        153
-                    ],
-                    [-116.54687405,
-                        33.8269043,
-                        154
-                    ],
-                    [-116.54687405,
-                        33.8269043,
-                        154
-                    ],
-                    [-116.54687405,
-                        33.82677555,
-                        154
-                    ],
-                    [-116.54687405,
-                        33.82613182,
-                        154
-                    ],
-                    [-116.54685259,
-                        33.82540226,
-                        154
-                    ],
-                    [-116.54683113,
-                        33.82518768,
-                        153
-                    ],
-                    [-116.54683113,
-                        33.82518768,
-                        153
-                    ],
-                    [-116.54685259,
-                        33.82503748,
-                        153
-                    ],
-                    [-116.54683113,
-                        33.82452249,
-                        153
-                    ],
-                    [-116.54678822,
-                        33.82357836,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.82263422,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.82252693,
-                        153
-                    ],
-                    [-116.54678822,
-                        33.82241964,
-                        152
-                    ],
-                    [-116.54680967,
-                        33.82224798,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.82166863,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.82136822,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.82078886,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.82010221,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.81975889,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.81915808,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.81789208,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.81681919,
-                        153
-                    ],
-                    [-116.54680967,
-                        33.816154,
-                        154
-                    ],
-                    [-116.54668093,
-                        33.81542444,
-                        156
-                    ],
-                    [-116.54620886,
-                        33.81465197,
-                        157
-                    ],
-                    [-116.54541493,
-                        33.81366491,
-                        156
-                    ],
-                    [-116.54481411,
-                        33.81263494,
-                        155
-                    ],
-                    [-116.54464245,
-                        33.81175518,
-                        154
-                    ],
-                    [-116.54464245,
-                        33.81063938,
-                        154
-                    ],
-                    [-116.54498577,
-                        33.80978107,
-                        154
-                    ],
-                    [-116.54552221,
-                        33.80903006,
-                        154
-                    ],
-                    [-116.54569387,
-                        33.80834341,
-                        153
-                    ],
-                    [-116.54569387,
-                        33.80821466,
-                        153
-                    ],
-                    [-116.54571533,
-                        33.80639076,
-                        150
-                    ],
-                    [-116.54569387,
-                        33.80433083,
-                        148
-                    ],
-                    [-116.54567242,
-                        33.80291462,
-                        147
-                    ],
-                    [-116.54554367,
-                        33.8025713,
-                        146
-                    ],
-                    [-116.54550076,
-                        33.80248547,
-                        146
-                    ],
-                    [-116.54539347,
-                        33.80233526,
-                        146
-                    ],
-                    [-116.5449214,
-                        33.80182028,
-                        147
-                    ],
-                    [-116.54410601,
-                        33.80139113,
-                        148
-                    ],
-                    [-116.5432477,
-                        33.80128384,
-                        148
-                    ],
-                    [-116.54281855,
-                        33.80128384,
-                        147
-                    ],
-                    [-116.54277563,
-                        33.80128384,
-                        147
-                    ]
-                ],
-                "type": "LineString"
-            },
-            "properties": {
-                "name": "14 track",
-                "type": "detail",
-                "kind": "track",
                 "destination": "palmsprings"
             },
             "type": "Feature"
@@ -36708,70 +36795,6 @@
                 "name": "Emerald Pools",
                 "type": "detail",
                 "kind": "hike",
-                "destination": "zion"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-112.98699796,
-                    37.20002603
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Visitor Center",
-                "name": "Visitor Center",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "zion"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-113.04796667,
-                    37.43801667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Kolob Reservoir",
-                "name": "Kolob Reservoir",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "zion"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-113.1091,
-                    37.34178333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Sunset Spot",
-                "name": "Sunset Spot",
-                "type": "detail",
-                "kind": "photo",
-                "destination": "zion"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-113.00005,
-                    37.1884
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "MeMe's Cafe",
-                "name": "MeMe's Cafe",
-                "type": "detail",
-                "kind": "food",
                 "destination": "zion"
             },
             "type": "Feature"
@@ -42192,6 +42215,70 @@
         },
         {
             "geometry": {
+                "coordinates": [-112.98699796,
+                    37.20002603
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Visitor Center",
+                "name": "Visitor Center",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "zion"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-113.04796667,
+                    37.43801667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Kolob Reservoir",
+                "name": "Kolob Reservoir",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "zion"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-113.1091,
+                    37.34178333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Sunset Spot",
+                "name": "Sunset Spot",
+                "type": "detail",
+                "kind": "photo",
+                "destination": "zion"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-113.00005,
+                    37.1884
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "MeMe's Cafe",
+                "name": "MeMe's Cafe",
+                "type": "detail",
+                "kind": "food",
+                "destination": "zion"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
                 "coordinates": [
                     [-112.97590971,
                         37.21740961,
@@ -47418,86 +47505,6 @@
         },
         {
             "geometry": {
-                "coordinates": [-118.2535,
-                    34.04691667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Downtown",
-                "name": "Downtown",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "losangeles"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-118.33318333,
-                    34.10165
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Hollywood Boulevard",
-                "name": "Hollywood Boulevard",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "losangeles"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-118.49731667,
-                    34.00925
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Santa Monica Pier",
-                "name": "Santa Monica Pier",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "losangeles"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-118.47476667,
-                    34.07726667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Getty Center",
-                "name": "Getty Center",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "losangeles"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-118.37563333,
-                    33.94471667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Car Rental",
-                "name": "Car Rental",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "losangeles"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
                 "coordinates": [-118.4137,
                     33.94326667
                 ],
@@ -47514,30 +47521,14 @@
         },
         {
             "geometry": {
-                "coordinates": [-118.29135,
-                    34.0564
+                "coordinates": [-118.2535,
+                    34.04691667
                 ],
                 "type": "Point"
             },
             "properties": {
-                "description": "Korean BBQ",
-                "name": "Korean BBQ",
-                "type": "detail",
-                "kind": "food",
-                "destination": "losangeles"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-118.34888333,
-                    34.1069
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Runyon Canyon Viewpoint",
-                "name": "Runyon Canyon Viewpoint",
+                "description": "Downtown",
+                "name": "Downtown",
                 "type": "detail",
                 "kind": "poi",
                 "destination": "losangeles"
@@ -50842,6 +50833,70 @@
                 "name": "Downtown Walk",
                 "type": "detail",
                 "kind": "track",
+                "destination": "losangeles"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-118.49731667,
+                    34.00925
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Santa Monica Pier",
+                "name": "Santa Monica Pier",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "losangeles"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-118.33318333,
+                    34.10165
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Hollywood Boulevard",
+                "name": "Hollywood Boulevard",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "losangeles"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-118.34888333,
+                    34.1069
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Runyon Canyon Viewpoint",
+                "name": "Runyon Canyon Viewpoint",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "losangeles"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-118.29135,
+                    34.0564
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Korean BBQ",
+                "name": "Korean BBQ",
+                "type": "detail",
+                "kind": "food",
                 "destination": "losangeles"
             },
             "type": "Feature"
@@ -58262,6 +58317,38 @@
         },
         {
             "geometry": {
+                "coordinates": [-118.47476667,
+                    34.07726667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Getty Center",
+                "name": "Getty Center",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "losangeles"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-118.37563333,
+                    33.94471667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Car Rental",
+                "name": "Car Rental",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "losangeles"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
                 "coordinates": [
                     [-118.18319321,
                         34.0495491,
@@ -60726,198 +60813,6 @@
                 "name": "AirBnB",
                 "type": "detail",
                 "kind": "hotel",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.17491667,
-                    32.71383333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "USS Midway",
-                "name": "USS Midway",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.14903333,
-                    32.72958333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Balboa Park",
-                "name": "Balboa Park",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.19575,
-                    32.75406667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Old Town",
-                "name": "Old Town",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.25323333,
-                    32.77043333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Mission Beach",
-                "name": "Mission Beach",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.25041667,
-                    32.77226667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Subway",
-                "name": "Subway",
-                "type": "detail",
-                "kind": "food",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.25226667,
-                    32.75163333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Ocean Beach",
-                "name": "Ocean Beach",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.2512,
-                    32.74711667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Hodad's Burger",
-                "name": "Hodad's Burger",
-                "type": "detail",
-                "kind": "food",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.25678333,
-                    32.79486667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Pacific Beach",
-                "name": "Pacific Beach",
-                "type": "detail",
-                "kind": "poi",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.24323333,
-                    32.79911667
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Hoboken Pizza",
-                "name": "Hoboken Pizza",
-                "type": "detail",
-                "kind": "food",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.204,
-                    32.8303
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Shopping",
-                "name": "Shopping",
-                "type": "detail",
-                "kind": "shop",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.19423333,
-                    32.75215
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Cafe Coyote",
-                "name": "Cafe Coyote",
-                "type": "detail",
-                "kind": "food",
-                "destination": "sandiego"
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": {
-                "coordinates": [-117.16755,
-                    32.76788333
-                ],
-                "type": "Point"
-            },
-            "properties": {
-                "description": "Fashion Valley Mall",
-                "name": "Fashion Valley Mall",
-                "type": "detail",
-                "kind": "shop",
                 "destination": "sandiego"
             },
             "type": "Feature"
@@ -65466,6 +65361,86 @@
                 "name": "16 track",
                 "type": "detail",
                 "kind": "track",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.17491667,
+                    32.71383333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "USS Midway",
+                "name": "USS Midway",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.25323333,
+                    32.77043333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Mission Beach",
+                "name": "Mission Beach",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.25226667,
+                    32.75163333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Ocean Beach",
+                "name": "Ocean Beach",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.2512,
+                    32.74711667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Hodad's Burger",
+                "name": "Hodad's Burger",
+                "type": "detail",
+                "kind": "food",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.16755,
+                    32.76788333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Fashion Valley Mall",
+                "name": "Fashion Valley Mall",
+                "type": "detail",
+                "kind": "shop",
                 "destination": "sandiego"
             },
             "type": "Feature"
@@ -71130,6 +71105,86 @@
                 "name": "17 track",
                 "type": "detail",
                 "kind": "track",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.19575,
+                    32.75406667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Old Town",
+                "name": "Old Town",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.19423333,
+                    32.75215
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Cafe Coyote",
+                "name": "Cafe Coyote",
+                "type": "detail",
+                "kind": "food",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.14903333,
+                    32.72958333
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Balboa Park",
+                "name": "Balboa Park",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.25678333,
+                    32.79486667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Pacific Beach",
+                "name": "Pacific Beach",
+                "type": "detail",
+                "kind": "poi",
+                "destination": "sandiego"
+            },
+            "type": "Feature"
+        },
+        {
+            "geometry": {
+                "coordinates": [-117.24323333,
+                    32.79911667
+                ],
+                "type": "Point"
+            },
+            "properties": {
+                "description": "Hoboken Pizza",
+                "name": "Hoboken Pizza",
+                "type": "detail",
+                "kind": "food",
                 "destination": "sandiego"
             },
             "type": "Feature"
