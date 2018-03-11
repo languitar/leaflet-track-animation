@@ -22,6 +22,12 @@
             height: 100%;
             width: 100%;
         }
+        .leaflet-tooltip {
+            padding: 1px;
+        }
+        .awesome-marker {
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
@@ -33,14 +39,14 @@
         }
 
         mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-        var tileLayer = L.tileLayer(
+        var mapnikLayer = L.tileLayer(
             'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; ' + mapLink + ' Contributors',
             maxZoom: 18,
             });
         var map = L.map('map', {
             zoomControl: false,
-            layers: [tileLayer]
+            layers: [mapnikLayer]
         });
 
 		var hotelIcon = L.AwesomeMarkers.icon({
@@ -52,25 +58,25 @@
 		var foodIcon = L.AwesomeMarkers.icon({
             icon: 'utensils',
             prefix: 'fa',
-            markerColor: '#ffff00', // TODO
+            markerColor: 'purple',
             iconColor: 'white'
         });
 		var shopIcon = L.AwesomeMarkers.icon({
             icon: 'shopping-cart',
             prefix: 'fa',
-            markerColor: '#ffff00', // TODO
+            markerColor: 'blue',
             iconColor: 'white'
         });
 		var hikeIcon = L.AwesomeMarkers.icon({
             icon: 'male',
             prefix: 'fa',
-            markerColor: '#ffff00', // TODO
+            markerColor: 'darkgreen',
             iconColor: 'white'
         });
 		var photoIcon = L.AwesomeMarkers.icon({
             icon: 'camera',
             prefix: 'fa',
-            markerColor: '#ffff00', // TODO
+            markerColor: 'orange',
             iconColor: 'white'
         });
 		var destinationIcon = L.AwesomeMarkers.icon({
@@ -79,47 +85,41 @@
             markerColor: 'red',
             iconColor: 'white'
         });
+		var poiIcon = L.AwesomeMarkers.icon({
+            icon: 'map-pin',
+            prefix: 'fa',
+            markerColor: 'darkblue',
+            iconColor: 'white'
+        });
 
-        // var hotelLayer = new L.GeoJSON.AJAX("data.geojson", {
-        //     filter: function (feature) {
-        //         return feature.properties.type == 'hotel';
-        //     },
-        //     pointToLayer: function (feature, latlng) {
-        //         var marker = L.marker(latlng, {icon: hotelIcon});
-        //         marker.bindTooltip(feature.properties.name, {permanent: true});
-        //         return marker;
-        //     }});
-        // hotelLayer.addTo(map);
-        // var destinationLayer = new L.GeoJSON.AJAX("data.geojson", {
-        //     filter: function (feature) {
-        //         return feature.properties.type == 'destination';
-        //     },
-        //     pointToLayer: function (feature, latlng) {
-        //         var marker = L.marker(latlng, {icon: destinationIcon});
-        //         marker.bindTooltip(feature.properties.name, {permanent: true});
-        //         return marker;
-        //     }});
-        // destinationLayer.addTo(map);
-        //
-        // var travelLayer = new L.GeoJSON.AJAX("data.geojson", {
-        //     filter: function (feature) {
-        //         return feature.geometry.type === 'LineString';
-        //     },
-        //     snakingPause: 1000
-        // });
+        var destinationsByKey = {};
+        var destinations = L.featureGroup();
+        var details = {}
+        var detailGroup = L.featureGroup();
+        var routes = {}
+        var routeGroup = L.featureGroup();
 
-        destinations = {}
-        details = {}
-        routes = {}
+        function get_random_color() {
+            var letters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++)
+            {
+               color += letters[Math.round(Math.random() * 15)];
+            }
+            return color;
+        }
+
+        var trackColors = ['darkblue', 'darkgreen', 'darkred'];
+        var currentColor = 0;
 
         allLayer = new L.GeoJSON.AJAX("data.geojson", {
             pointToLayer: function(feature, latlng) {
                 if (feature.properties.type === 'destination') {
-                    var marker = L.marker(latlng, {icon: destinationIcon});
+                    let marker = L.marker(latlng, {icon: destinationIcon});
                     marker.bindTooltip(feature.properties.name, {permanent: true});
                     return marker;
                 } else if (feature.properties.type === 'detail') {
-                    var marker = L.marker(latlng);
+                    let marker = L.marker(latlng);
 
                     if (feature.properties.kind === 'hotel') {
                         marker = L.marker(latlng, {icon: hotelIcon});
@@ -130,10 +130,16 @@
                     } else if (feature.properties.kind === 'hike') {
                         marker = L.marker(latlng, {icon: hikeIcon});
                     } else if (feature.properties.kind === 'photo') {
-                        marker = L.marker(latlng, {icon: hikeIcon});
+                        marker = L.marker(latlng, {icon: photoIcon});
+                    } else if (feature.properties.kind === 'poi') {
+                        marker = L.marker(latlng, {icon: poiIcon});
                     }
 
-                    marker.bindTooltip(feature.properties.name, {permanent: true});
+                    marker.bindTooltip(feature.properties.name, {
+                        permanent: true,
+                        opacity: 0.7,
+                        direction: 'bottom'
+                    });
 
                     return marker;
                 } else {
@@ -142,57 +148,116 @@
             },
             onEachFeature: function(feature, layer) {
                 if (feature.properties.type === 'destination') {
-                    destinations[feature.properties.key] = layer;
+                    layer.addTo(destinations);
+                    destinationsByKey[feature.properties.key] = layer;
                 } else if (feature.properties.type === 'detail') {
                     if (!(feature.properties.destination in details)) {
-                        details[feature.properties.destination] = L.layerGroup();
+                        details[feature.properties.destination] = L.featureGroup();
+                        details[feature.properties.destination].options.snakingPause = 1000;
                     }
-                    layer.addTo(details[feature.properties.destination]);
+                    let featureGroup = details[feature.properties.destination];
+
+                    if (feature.properties.kind === 'track') {
+                        // set different colors for tracks to see their overlapping progression
+                        layer.setStyle({color: trackColors[currentColor % trackColors.length]});
+                        currentColor += 1;
+
+                        // override snaking function to first zoom to the track
+                        let origSnakeIn = layer.snakeIn;
+                        layer.snakeIn = async function() {
+                            layer.setStyle({stroke: false});
+                            map.once('moveend', async function() {
+                                layer.setStyle({stroke: true});
+                                origSnakeIn.bind(layer)();
+                            });
+                            map.flyToBounds(this.getBounds(), {padding: [100, 100]})
+                        }
+                    }
+
+                    layer.addTo(featureGroup);
+                    layer.addTo(detailGroup);
                 } else if (feature.properties.type === 'route') {
                     routes[feature.properties.from] = layer;
+                    layer.addTo(routeGroup);
                 }
             }
         });
-        allLayer.addTo(map);
 
-        async function animateOneTrack(layer) {
-            console.log('animating ' + layer);
-            bounds = L.latLngBounds(layer.getBounds().getNorthEast(), layer.getBounds().getSouthWest())
-            map.flyToBounds(bounds);
+        async function animateDestination(destination) {
+            console.log("animating destination " + destination.feature.properties.key);
+            let layer = details[destination.feature.properties.key];
+            let bounds = L.latLngBounds(layer.getBounds().getNorthEast(), layer.getBounds().getSouthWest())
             map.once('moveend', async function() {
                 await sleep(1000);
-                layer.addTo(map).snakeIn();
                 layer.once('snakeend', async function() {
-
-                    let coords = layer.getLatLngs()[0];
-                    map.flyTo(coords[coords.length - 1], 14);
-                    map.once('moveend', async function() {
-                        hotelLayer.addTo(map);
-                        await sleep(3000);
-                        map.removeLayer(hotelLayer);
-                        layer.fire('animend');
-                    });
+                    await sleep(3000);
+                    layer.remove();
+                    console.log("destend " + destination.feature.properties.key);
+                    destination.fire('destend');
                 });
+                layer.addTo(map).snakeIn();
             });
+            map.flyToBounds(bounds, {padding: [100, 100]});
+        }
+
+        async function animateRoute(route) {
+            console.log("animating route " + route.feature.properties.from);
+
+            // zoom to route and destinations
+            let boundsGroup = L.featureGroup();
+            destinationsByKey[route.feature.properties.from].addTo(boundsGroup);
+            destinationsByKey[route.feature.properties.to].addTo(boundsGroup);
+            route.addTo(boundsGroup);
+            boundsGroup.addTo(map);
+
+            map.once('moveend', async function() {
+                boundsGroup.once('snakeend', async function() {
+                    boundsGroup.remove();
+                    console.log("routeend from " + route.feature.properties.from);
+                    route.fire('routeend');
+                });
+                boundsGroup.snakeIn();
+            });
+            map.flyToBounds(boundsGroup.getBounds(), {padding: [100, 100]});
+        }
+
+        async function animateFinal() {
+            destinations.addTo(map);
+            routeGroup.addTo(map);
+            map.flyToBounds(allLayer.getBounds(), {padding: [100, 100]});
         }
 
         async function animate() {
-
-            for (let index = 0; index < travelLayer.getLayers().length - 1; ++index) {
-                let layer = travelLayer.getLayers()[index];
-                let next = travelLayer.getLayers()[index + 1];
-
-                let snakeNext = async function() {
-                    animateOneTrack(next);
+            // clear layers
+            map.eachLayer(function (layer) {
+                if (layer !== mapnikLayer) {
+                    map.removeLayer(layer);
                 }
+            });
 
-                layer.once('animend', snakeNext);
+            for (let index = 0; index < destinations.getLayers().length; ++index) {
+                let current = destinations.getLayers()[index];
+                let next = destinations.getLayers()[index + 1];
+
+                current.once('destend', async function() {
+                    let route = routes[current.feature.properties.key]
+                    route.once('routeend', async function() {
+                        console.log('received routeend');
+                        if (next) {
+                            animateDestination(next);
+                        } else {
+                            animateFinal();
+                        }
+                    });
+                    animateRoute(route);
+                });
             }
 
-            animateOneTrack(travelLayer.getLayers()[0]);
+            animateDestination(destinations.getLayers()[0]);
+
         }
         allLayer.on('data:loaded', function(e) {
-            bounds = [allLayer.getBounds().getNorthEast(), allLayer.getBounds().getSouthWest()]
+            let bounds = [allLayer.getBounds().getNorthEast(), allLayer.getBounds().getSouthWest()]
             map.fitBounds(bounds);
 
             document.onkeydown = function (e) {
@@ -204,13 +269,17 @@
                 }
             }
         });
-        // travelLayer.addTo(map);
 
-        // travelLayer.on('snakestart snake snakeend', function(ev){
-		// 	console.log(ev.type);
-		// });
+        var baseMaps = {
+            "Mapnik": mapnikLayer
+        };
 
-
+        var overlayMaps = {
+            "Destination": destinations,
+            "Route": routeGroup,
+            "Details": detailGroup
+        };
+        L.control.layers(baseMaps, overlayMaps).addTo(map);
     </script>
 </body>
 </html>
