@@ -42,7 +42,7 @@
         var mapnikLayer = L.tileLayer(
             'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; ' + mapLink + ' Contributors',
-            maxZoom: 18,
+            maxZoom: 19,
             });
         var openMapSurferLayer = L.tileLayer(
             'https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
@@ -52,7 +52,12 @@
         var googleTerrainLayer = L.tileLayer(
             'http://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}&s=Ga', {
             attribution: '&copy; Google',
-            maxZoom: 18,
+            maxZoom: 20,
+            });
+        var googleHybridLayer = L.tileLayer(
+            'http://mt0.google.com/vt/lyrs=s,h&hl=en&x={x}&y={y}&z={z}&s=Ga', {
+            attribution: '&copy; Google',
+            maxZoom: 20,
             });
 
         var map = L.map('map', {
@@ -63,9 +68,10 @@
         var baseMaps = {
             "Mapnik": mapnikLayer,
             "OpenMapSurfer": openMapSurferLayer,
-            "Google Terrain": googleTerrainLayer
+            "Google Terrain": googleTerrainLayer,
+            "Google Hybrid": googleHybridLayer
         };
-        var baseMapList = [mapnikLayer, openMapSurferLayer, googleTerrainLayer];
+        var baseMapList = [mapnikLayer, openMapSurferLayer, googleTerrainLayer, googleHybridLayer];
 
 		var hotelIcon = L.AwesomeMarkers.icon({
             icon: 'bed',
@@ -120,7 +126,7 @@
         var trackColors = ['darkblue', 'darkgreen', 'darkred'];
         var currentColor = 0;
 
-        allLayer = new L.GeoJSON.AJAX("data.geojson", {
+        allLayer = new L.GeoJSON.AJAX("data-thailand.geojson", {
             pointToLayer: function(feature, latlng) {
                 if (feature.properties.type === 'destination') {
                     let marker = L.marker(latlng, {icon: destinationIcon});
@@ -167,6 +173,7 @@
 
                     if (feature.properties.kind === 'track') {
                         // set different colors for tracks to see their overlapping progression
+                        layer.options.snakingSpeed = 120;
                         layer.setStyle({color: trackColors[currentColor % trackColors.length]});
                         currentColor += 1;
 
@@ -189,6 +196,7 @@
                     layer.addTo(detailGroup);
                 } else if (feature.properties.type === 'route') {
                     routes[feature.properties.from] = layer;
+                    layer.options.snakingSpeed = 120;
                     layer.addTo(routeGroup);
                 }
             }
@@ -256,15 +264,23 @@
 
                 current.once('destend', async function() {
                     let route = routes[current.feature.properties.key]
-                    route.once('routeend', async function() {
-                        console.log('received routeend');
+                    if (route) {
+                        route.once('routeend', async function() {
+                            console.log('received routeend');
+                            if (next) {
+                                animateDestination(next);
+                            } else {
+                                animateFinal();
+                            }
+                        });
+                        animateRoute(route);
+                    } else {
                         if (next) {
                             animateDestination(next);
                         } else {
                             animateFinal();
                         }
-                    });
-                    animateRoute(route);
+                    }
                 });
             }
 
